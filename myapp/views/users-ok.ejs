@@ -48,20 +48,15 @@
       (function basic(container) {
 
   var
-    d1 = [], // First data series
+    d1 = [[0, 3], [4, 8], [8, 5], [9, 13]], // First data series
     d2 = [],                                // Second data series
-    i,j,graph;
+    i, graph;
 
   // Generate first data set
-  for (i = 0; i < 14; i += 0.2) {
+  for (i = 0; i < 14; i += 0.5) {
     d2.push([i, Math.sin(i)]);
   }
-    <% for(j = 0; j < datas.length; j++) {%>
-		d1.push([<%= j %>, <%= datas[j].age %>]);
-    <% } %>
-//	 <%  %> 语句  <%=  %>变量
-	 console.log(d1);
-	 
+
   // Draw Graph
   graph = Flotr.draw(container, [ d1, d2 ], {
     xaxis: {
